@@ -1,0 +1,69 @@
+Pls write the pdfupdate js code with the following instructions
+
+1. From the tag values, assign the following variables
+fullAddress = doorApartment, streetName, area, (separated by comma and space). 
+addr1 = first 40 characters of fullAddress js variable, but restrict till the last possible comma
+addr2 = remaining part of fullAddress (without addr1, but restrict its total length to 40, if fullAddress length is less than 40, leave this variable blank)
+bcode = Text to the right of hyphen in branch field, remove spaces padded by zeroes in the beginning, total length to be 5
+bname = Text to the left of hyphen in branch field
+fullName = firstName and lastName separated by space
+
+
+2. Assign the following pdf fields with its values (Ive separated them by |. First row is header, ignore it). The value column is only an instruction for you, read it and write the code accordingly.
+PDF FIELD|VALUE
+ACCNO|accountNumber
+ACCNO-16F|accountNumber
+ADDR1-40F|addr1 js variable
+ADDR2-40F|addr2 js variable
+BCODE|bcode js variable
+BCODE-5F|bcode js variable
+BNAME|bname js variable
+BNAME-18F|bname js variable
+BNAME-21F|bname js variable
+CG-CB|"Yes" if occupationType dropdown value is "CENTRAL_GOVT"
+CHRIST-CB|"Yes" if religion dropdown value is "CHRISTIAN"
+CITY-13F|city
+COUNTRY-13F|country
+DATE|DD/MM/YYYY format of formDate
+DATE-8F|DDMMYYYY format of formDate
+DEFENCE-CB|"Yes" if occupationType dropdown value is "DEFENSE"
+DESIG-13F|designation
+DISTRICT-23F|district
+DL-CB|"Yes" if ovdType dropdown value is "DRIVING_LICENSE"
+DOB-8F|DDMMYYYY format of dateOfBirth
+FATHER-40F|fatherName
+FEMALE-CB|"Yes" if gender dropdown value is "FEMALE"
+FNAME-39F|firstName
+FULL-ADDR|fullAddress js variable
+FULL-NAME|fullName js variable
+GEN-CB|"Yes" if category dropdown value is "GENERAL"
+HINDU-CB|"Yes" if religion dropdown value is "HINDU"
+HOUSEWIFE-CB|"Yes" if occupation dropdown value is "HOUSEWIFE"
+INCOME-16F|monthlyIncome
+LNAME-39F|lastName
+MAIL-24F|email
+MALE-CB|"Yes" if gender dropdown value is "MALE"
+MOBILE-10F|mobile
+MUSLIM-CB|"Yes" if religion dropdown value is "MUSLIM"
+OBC-CB|"Yes" if category dropdown value is "OBC"
+OTHPROF-CB|"Yes" if occupation dropdown value is "BUSINESS"
+OVD-NAME|ovdType
+OVD-NO|ovdNumber
+PAN-10F|panNumber
+PASSPORT-CB|"Yes" if ovdType dropdown value is "PASSPORT"
+PINCODE-6F|pincode
+PSU-CB|"Yes" if occupationType dropdown value is "PSU"
+PVT-CB|"Yes" if occupationType dropdown value is "PRIVATE"
+SC-CB|"Yes" if category dropdown value is "SC"
+SG-CB|"Yes" if occupationType dropdown value is "STATE_GOVT"
+SIKH-CB|"Yes" if religion dropdown value is "SIKH"
+STATE-13F|state
+ST-CB|"Yes" if category dropdown value is "ST"
+STUDENT-CB|"Yes" if occupation dropdown value is "STUDENT"
+TRANS-CB|"Yes" if gender dropdown value is "TRANSGENDER"
+UID-CB|"Yes" if ovdType dropdown value is "AADHAAR"
+VOTERID-CB|"Yes" if ovdType dropdown value is "VOTER_ID"
+
+3. Except checkbox (Yes value), change all other values to upper case and then assign
+4. Pls download the PDF file with name fullName variable followed by "Request"
+

@@ -1,0 +1,115 @@
+/* ---------- GLOBAL ---------- */
+body {
+    font-family: 'JosefinSans-Bold', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('resources/imgs/business.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(244, 244, 244, 0.8);
+}
+
+/* ---------- FORM CONTAINER ---------- */
+.form-root {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #faf8f8c4;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.85);
+}
+
+/* ---------- HEADINGS ---------- */
+#formTitle {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    margin-top: 35px;
+    color: #2d0e77;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* ---------- LABELS ---------- */
+label {
+    margin-top: 22px;
+    font-weight: bold;
+    display: block;
+    color: #333;
+}
+
+/* ---------- INPUTS & SELECTS ---------- */
+.field-text,
+.field-date,
+.field-dropdown {
+    width: 100%;
+    padding: 10px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.field-text:focus,
+.field-date:focus,
+.field-dropdown:focus {
+    outline: none;
+    box-shadow:
+        inset 0 0 5px rgba(0, 0, 0, 0.3),
+        0 0 10px #bd59d4;
+}
+
+/* ---------- DISABLED INPUT ---------- */
+input[disabled] {
+    background-color: #e9e9e9;
+    cursor: not-allowed;
+}
+
+/* ---------- CONDITIONAL SECTION ---------- */
+.conditional-section {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #ffffffb5;
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.btn-submit {
+    margin-top: 35px;
+    padding: 12px;
+    background-color: #bd59d4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #a545c3;
+}
+
+.request-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #faf8f8c4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.897);
+  backdrop-filter: blur(0px);
+}
+

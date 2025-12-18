@@ -1,0 +1,6 @@
+copy(
+  [...document.querySelectorAll('[id]')]
+    .map(el => el.id)
+    .join('\n')
+);
+

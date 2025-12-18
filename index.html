@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Request</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="/resources/js/pdf-lib.min.js"></script>
+    <script src="/resources/js/download.js"></script>
+</head>
+
+<body>
+    <div class="request-container">
+         <h2 id="formTitle">Customer Request</h2>
+        <form id="customerRequestForm" class="form-root">
+
+            <!-- Request Type -->
+            <label for="requestType">Request Type</label>
+            <select id="requestType" class="field-dropdown">
+                <option value="KYC_UPDATION">KYC Updation</option>
+                <option value="ACCOUNT_ACTIVATION">Account Activation</option>
+            </select>
+
+            <!-- Account Number -->
+            <label for="accountNumber">Account Number</label>
+            <input type="text" id="accountNumber" class="field-text">
+
+            <!-- Name -->
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" class="field-text">
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" class="field-text">
+
+            <!-- Father Name -->
+            <label for="fatherName">Father Name</label>
+            <input type="text" id="fatherName" class="field-text">
+
+            <!-- DOB -->
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="date" id="dateOfBirth" class="field-date">
+
+            <!-- Gender -->
+            <label for="gender">Gender</label>
+            <select id="gender" class="field-dropdown">
+                <option value="MALE">Male</option>
+                <option value="FEMALE">Female</option>
+                <option value="TRANSGENDER">Transgender</option>
+            </select>
+
+            <!-- Address Section -->
+            <h3 class="section-title">Address</h3>
+
+            <label for="doorApartment">Door No & Apartment Name</label>
+            <input type="text" id="doorApartment" class="field-text">
+
+            <label for="streetName">Street Name</label>
+            <input type="text" id="streetName" class="field-text">
+
+            <label for="area">Area</label>
+            <input type="text" id="area" class="field-text">
+
+            <label for="city">City</label>
+            <input type="text" id="city" class="field-text">
+
+            <label for="district">District</label>
+            <input type="text" id="district" class="field-text">
+
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" class="field-text">
+
+            <label for="state">State</label>
+            <input type="text" id="state" class="field-text" value="Tamil Nadu">
+
+            <label for="country">Country</label>
+            <input type="text" id="country" class="field-text" value="India">
+
+            <!-- Mobile -->
+            <label for="mobile">Mobile</label>
+            <input type="text" id="mobile" class="field-text">
+
+            <!-- Occupation -->
+            <label for="occupation">Occupation</label>
+            <select id="occupation" class="field-dropdown">
+                <option value=""></option>
+                <option value="SALARIED">Salaried</option>
+                <option value="BUSINESS">Business</option>
+                <option value="STUDENT">Student</option>
+                <option value="HOUSEWIFE">Housewife</option>
+            </select>
+
+            <!-- Salaried Section -->
+            <div id="salariedSection" class="conditional-section">
+
+                <h3 class="section-title">Salaried Details</h3>
+
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" class="field-text">
+
+                <label for="designation">Designation</label>
+                <input type="text" id="designation" class="field-text">
+
+                <label for="occupationType">Occupation Type</label>
+                <select id="occupationType" class="field-dropdown">
+                    <option value=""></option>
+                    <option value="PRIVATE">Private Sector</option>
+                    <option value="STATE_GOVT">State Government</option>
+                    <option value="CENTRAL_GOVT">Central Government</option>
+                    <option value="PSU">PSU</option>
+                    <option value="DEFENSE">Defense</option>
+                </select>
+
+            </div>
+
+            <!-- Branch -->
+            <label for="branch">Branch</label>
+            <select id="branch" class="field-dropdown">
+                <option value="Intouch Saravanampatti - 19225">Intouch Saravanampatti - 19225</option>
+            </select>
+
+            <!-- Date -->
+            <label for="formDate">Date</label>
+            <input type="date" id="formDate" class="field-date" disabled>
+
+            <!-- PAN -->
+            <label for="panNumber">PAN No</label>
+            <input type="text" id="panNumber" class="field-text">
+
+            <!-- OVD -->
+            <label for="ovdType">OVD Available</label>
+            <select id="ovdType" class="field-dropdown">
+                <option value="AADHAAR">Aadhaar</option>
+                <option value="PASSPORT">Passport</option>
+                <option value="DRIVING_LICENSE">Driving License</option>
+                <option value="VOTER_ID">Voter ID</option>
+            </select>
+
+            <label for="ovdNumber">OVD Number</label>
+            <input type="text" id="ovdNumber" class="field-text">
+
+            <!-- Religion -->
+            <label for="religion">Religion</label>
+            <select id="religion" class="field-dropdown">
+                <option value="HINDU">Hindu</option>
+                <option value="CHRISTIAN">Christian</option>
+                <option value="MUSLIM">Muslim</option>
+                <option value="SIKH">Sikh</option>
+                <option value="OTHERS">Others</option>
+            </select>
+
+            <!-- Income -->
+            <label for="monthlyIncome">Monthly Income</label>
+            <input type="text" id="monthlyIncome" class="field-text">
+
+            <!-- Category -->
+            <label for="category">Category</label>
+            <select id="category" class="field-dropdown">
+                <option value="GENERAL">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+            </select>
+
+            <!-- Email -->
+            <label for="email">Mail ID</label>
+            <input type="email" id="email" class="field-text">
+
+            <!-- Submit -->
+            <button type="button" id="submitFormBtn" class="btn-submit" onclick="updatePdf();">
+                Submit
+            </button>
+
+        </form>
+    </div>
+    <script>
+        // Default today's date
+        document.getElementById("formDate").value =
+            new Date().toISOString().split("T")[0];
+
+        // Occupation toggle
+        const occupationSelect = document.getElementById("occupation");
+        const salariedSection = document.getElementById("salariedSection");
+
+        function toggleSalariedSection() {
+            salariedSection.style.display =
+                occupationSelect.value === "SALARIED" ? "block" : "none";
+        }
+
+        occupationSelect.addEventListener("change", toggleSalariedSection);
+        toggleSalariedSection();
+    </script>
+
+    <script src="pdfupdate.js"></script>
+</body>
+
+</html>

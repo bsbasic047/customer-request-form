@@ -1,0 +1,38 @@
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        form {
+            background: #ffffff;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            border-radius: 6px;
+        }
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            box-sizing: border-box;
+        }
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+        .row > div {
+            flex: 1;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
